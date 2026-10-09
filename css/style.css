@@ -1,0 +1,352 @@
+/* الخط */
+body {
+    font-family: "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background-color: #F5F5F5
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    scroll-margin-top: 70px; /* عشان الـ navbar الثابت ما يغطيش على الأقسام */
+}
+
+
+/* الناف بار */
+.navbar {
+    
+    background: rgba(4, 4, 4, 0.8);
+}
+
+/* .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+} */
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M24 6L6 24'/%3e%3c/svg%3e");
+}
+
+/* الخلفية */
+.hero {
+    background: url("../images/hero-bg.jpg") center/cover no-repeat;
+}
+
+/* الطبقة السودة الشفافة (نفس لون الناف بار) */
+.overlay {
+    background-color: rgba(4, 4, 4, 0.7); /* غيّر 0.7 للشفافية اللي تعجبك */
+}
+
+/* حجم الخط يتكيف مع الشاشة */
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+.navbar .nav-link {
+    position: relative;
+}
+
+/* الخط: مخفي في الأول */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+/* الخط: يظهر في اللينك النشط */
+.navbar .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+
+.section-title {
+    position: relative;
+    display: inline-block;   
+    padding-bottom: 8px;    
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;             
+    height: 4px;             
+    background-color: #0d6efd; 
+}
+
+.services-title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+
+/* <------------------------services section ---------------------------> */
+
+.card-title{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.card i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1rem;     /* تسنتر الدايرة وتسيب مسافة تحتها */
+    font-size: 2.5rem;
+    border-radius: 50%;
+    border: 8px solid #0d6efd;
+    
+}
+
+.card i:hover{
+    background-color: #0d6efd;
+    border: 6px solid #ccc0c0;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* <------------------------counter section ---------------------------> */
+/* .count{
+margin: 100px 0;
+    position: relative;
+    height: 400px;
+    background-attachment: fixed;
+    background: url("../images/post-3.jpg");
+    background-repeat: no-repeat;
+    background-image:scroll;
+    background-size: cover;
+    background-position: center center;
+
+} */
+
+
+.count {
+    margin: 100px 0;
+    min-height: 400px;
+    background-image: url("../images/post-3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;                                  /* نفس top/left/width/height */
+    background-color: rgba(0, 120, 255, 0.7);
+}
+
+.count-box i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border: 8px solid #ffffff9d;
+    border-radius: 50%;
+}
+
+.counter {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+/* <------------------------Work section ---------------------------> */
+.work-card {
+    overflow: hidden;
+}
+
+.work-card .card-img-top {
+    transition: transform 0.4s ease;
+}
+
+.work-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* .work-card {
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+} */
+
+.work-plus i{
+    width:70px;
+    height:70px;
+    color:#0d6efd;
+}
+
+#workCarousel .carousel-item img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.work-plus{
+    border:0;
+    background-color:transparent;
+}
+
+
+.slider-box{
+    position:relative;
+    background-image:url(../images/overlay-bg.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    height:450px;
+    margin:100px 0;
+}
+
+.overlay-slide{
+    position:absolute;
+    inset:0;
+    background-color: rgba(0, 120, 255, 0.7);
+}
+
+.testimonial-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;        /* الصورة تتقص بدل ما تتمدد */
+    border-radius: 50%;       /* دايرة */
+    
+}
+
+
+
+.testimonial-dots {
+    position: static;
+    margin: 1.5rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.testimonial-dots button[data-bs-target] {
+    width: 12px !important;
+    height: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background-color: #fff !important;
+    opacity: 0.4;
+}
+
+.testimonial-dots button[data-bs-target].active {
+    opacity: 1;
+}
+
+/* <------------------------Blog section ---------------------------> */
+
+.blog-image{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: relative;
+    margin-top: 100px;
+    padding: 50px 0;
+    background-image: url("../images/post-1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Overlay */
+
+.overlay-footer {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 120, 255, 0.7);
+}
+
+
+/* Footer Container */
+
+.foot-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+.btn-primary:hover {
+    background: none;
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+    transition: 0.5s all;
+}
+
+
+
+
+.contact-text {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+
+.social {
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.social i {
+    font-size: 2rem;
+}
+
+.social a {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #0d6efd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #212529;
+}
+
+.social a:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    transition: 0.5s all;
+}
+
+
+
+.end {
+    background-color: #0d6efd;
+}
